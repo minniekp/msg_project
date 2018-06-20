@@ -1,0 +1,19 @@
+<!-- templates/catalog_detail.html-->
+{% extends 'base.html' %}
+{% block content %} 
+<div class="catalog-entry"> 
+	<h2>{{ object.DatasetName }}</h2>
+	<!--<p>{{ object.YearOfOrigin}}</p>-->
+</div>
+
+<p>
+	<a href="{% url 'catalog_new' catalog.pk %}">Add New</a> 
+	<a href="{% url 'catalog_edit' catalog.pk %}">Edit</a> | 
+	<a href="{% url 'catalog_delete' catalog.pk %}">Delete</a>
+</p> 
+
+<p>Back to 
+	<a href="{% url 'catalog_list' %}">All DataSets</a>.
+</p> 
+
+{% endblock content %}

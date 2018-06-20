@@ -1,0 +1,10 @@
+<!-- templates/catalog_new.html -->
+{% extends 'base.html' %}
+{% block content %} 
+<h1>New DataSet</h1>
+ <form action="" method="catalog">
+ 	{% csrf_token %} 
+ 	{{ form.as_p }} 
+ 	<button class="btn btn-success ml-2" type="submit">Save</button> 
+ </form> 
+{% endblock %}

@@ -1,0 +1,25 @@
+<!-- templates/catalog_list.html --> 
+{% extends 'base.html' %}
+
+{% block title %}Catalogs{% endblock %}
+
+{% block content %} 
+{% for catalog in object_list %} 
+<div class="card"> 
+	<div class="card-header"> 
+	<span class="font-weight-bold">{{ catalog.DatasetName }}</span>  
+	<!--<span class="text-muted">{{ catalog.YearOfOrigin }}</span>--> 
+	</div> 
+<div class="card-body"> 
+{{ catalog.DatasetName }} 
+</div> 
+<div class="card-footer text-center text-muted"> 
+	<a href="{% url 'catalog_new' catalog.pk %}">Add New</a> |
+	<a href="{% url 'catalog_edit' catalog.pk %}">Edit</a> |
+    <a href="{% url 'catalog_delete' catalog.pk %}">Delete</a> 
+</div> 
+</div> 
+<br /> 
+
+{% endfor %}
+{% endblock content %}
